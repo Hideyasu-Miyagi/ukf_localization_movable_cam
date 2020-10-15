@@ -4,10 +4,9 @@
 ## Introduction
 
 This repository contains a set of MATLAB scripts simulating UKF (Unscented Kalman Filter)-based
-self-localization of a vehicle. The vehicle model is based on a 4-wheeled e-bike, whose front steering rod is
+self-localization of a vehicle. The simulation model is based on a 4-wheeled e-bike, whose front steering rod is
 movable similar to motorcyles or bicycles.
 
-UKF here 
 Information necessary for 'localizing' or estimating the vehicle's position comes
 from the encoder attached to the wheel, the angular sensor attached to the steering rod,
 and landmark image captured by a camera.
@@ -17,21 +16,24 @@ The scripts provides three types of self-localization system: Method A, B and C.
 - Method A
 
   Camera is attached to the steering rod. 
-  Since camera's pose relative to the vehicle's origin is contaminated with mechanical noise,
-  localization data based on landmark image is contaminated as well.
-  In this method , error covariance matrices given to UKF is calculated considering
+  Since camera's pose relative to the vehicle's origin calculated by
+  using angular sensor of steering rod is inevitably contaminate by
+  mechanical noise,
+  localization data based on landmark image should be contaminated as well.
+  In this method, error covariance matrices given to UKF is calculated considering
   this noise.
+
   
 - Method B
 
   Camera is attached to the steering rod. 
-  In this method , error covariance matrices given to UKF is calculated ignoring
+  In this method, error covariance matrices given to UKF is calculated ignoring
   mechanical noise of the steering rod relative to vehicle's origin.
   
 - Method C
 
-  Camera is attached to the vehicle's main frame.. 
-  In this method,camera's pose relative to vehicle's main frame is constant.
+  Camera is attached to the vehicle's main frame. 
+  In this method, camera's pose relative to vehicle's main frame is constant.
 
 
 ## Prerequisite
@@ -47,7 +49,7 @@ The scripts provides three types of self-localization system: Method A, B and C.
   - RAM: 16GB
 
   
-# How to use
+## How to use
 
   - Download the scripts 
   
